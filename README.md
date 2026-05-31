@@ -12,7 +12,7 @@ Below is the directory layout of this repository:
 
 ```text
 portfolio/
-├── duraimurugan_portfolio.html  # Main website entry point (HTML, CSS, & JS)
+├── index.html                  # Main website entry point (HTML, CSS, & JS)
 ├── README.md                   # Repository documentation (this file)
 └── image/                      # Asset directory for media and images
     └── 1.png                   # Professional profile picture
