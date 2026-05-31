@@ -616,9 +616,12 @@ footer{
 @media(max-width:768px){
   nav{padding:1rem 1.5rem;}
   .nav-links{display:none;}
-  #about .about-grid{grid-template-columns:1fr;}
+  #about .about-grid{grid-template-columns:1fr;gap:2rem;}
   .about-visual{max-width:260px;margin:0 auto;}
   .exp-timeline::before{left:14px;}
+  .exp-item{gap:1rem;}
+  .exp-card{padding:1.2rem;}
+  .projects-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;}
 }
 
 /* scroll reveal */
@@ -898,6 +901,24 @@ footer{
     <h2 class="section-title reveal">Professional Journey</h2>
     <div class="exp-timeline">
       <div class="exp-item reveal">
+        <div class="exp-dot-wrap"><div class="exp-dot" style="border-color:var(--accent2);box-shadow:0 0 12px rgba(129,140,248,0.4)"></div></div>
+        <div class="exp-card">
+          <div class="exp-meta">
+            <div>
+              <div class="exp-role">Business Analyst Intern</div>
+              <div class="exp-org" style="color:var(--accent2)">AperioHub — Virtual</div>
+            </div>
+            <div class="exp-period">May 2026</div>
+          </div>
+          <ul class="exp-list">
+            <li>Collaborated in global cross-functional teams to solve complex business briefs and deliver strategic recommendations</li>
+            <li>Analyzed organization data and built structured reports to support business decision-making</li>
+            <li>Facilitated project communications and workflows using digital collaboration tools in a remote workspace</li>
+            <li>Awarded Internship Participant status with credential ID: 887138a7</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-item reveal">
         <div class="exp-dot-wrap"><div class="exp-dot"></div></div>
         <div class="exp-card">
           <div class="exp-meta">
@@ -1053,14 +1074,7 @@ footer{
           <a href="https://drive.google.com/file/d/1DKX-T-AUVH4YCZi59BpWsHWuWCYI7ve1/view" target="_blank" class="cert-link">View Credential ↗</a>
         </div>
       </div>
-      <div class="cert-card reveal">
-        <div class="cert-icon ci-purple">🏢</div>
-        <div class="cert-body">
-          <div class="cert-name">AperioHub Internship Participants Program</div>
-          <div class="cert-org">AperioHub</div>
-          <div class="cert-issued">Issued May 2026 · ID: 887138a7</div>
-        </div>
-      </div>
+
       <div class="cert-card reveal">
         <div class="cert-icon ci-blue">⚙️</div>
         <div class="cert-body">
