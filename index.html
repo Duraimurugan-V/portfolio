@@ -408,8 +408,8 @@ section{position:relative;z-index:1;}
   display:flex;flex-direction:column;gap:0;
 }
 .exp-timeline::before{
-  content:'';position:absolute;left:16px;top:0;bottom:0;
-  width:1px;background:linear-gradient(to bottom,var(--accent),transparent);
+  content:'';position:absolute;left:19px;top:0;bottom:0;
+  width:2px;background:linear-gradient(to bottom,var(--accent),transparent);
 }
 .exp-item{
   display:grid;grid-template-columns:40px 1fr;gap:1.5rem;
@@ -612,16 +612,77 @@ footer{
 }
 .forage-cert-link:hover{background:rgba(52,211,153,0.15);}
 
+/* ─── MOBILE NAV DOCK ─── */
+.mobile-nav-dock {
+  display: none;
+}
+
+@media(max-width:768px) {
+  .mobile-nav-dock {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: rgba(10, 15, 30, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1rem;
+    padding-bottom: env(safe-area-inset-bottom, 0); /* Support iPhone notch safe area */
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  }
+  .dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.65rem;
+    font-weight: 600;
+    gap: 0.25rem;
+    width: 20%;
+    transition: color 0.2s;
+  }
+  .dock-item svg {
+    stroke: currentColor;
+    transition: transform 0.2s;
+  }
+  .dock-item:hover, .dock-item:focus {
+    color: var(--accent);
+  }
+  .dock-item:hover svg {
+    transform: translateY(-2px);
+  }
+  body {
+    padding-bottom: 70px; /* Make space for sticky bottom navigation */
+  }
+}
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   nav{padding:1rem 1.5rem;}
   .nav-links{display:none;}
+  .hero-title{font-size:clamp(2rem, 5.5vw, 2.8rem); line-height: 1.2;}
+  .hero-sub{font-size:0.9rem; line-height: 1.6; margin-bottom: 1.5rem;}
+  .hero-buttons{flex-direction:column; align-items:stretch; width:100%; max-width:320px; margin:0 auto; gap:0.8rem;}
+  .hero-buttons a{width:100%; justify-content:center;}
+  .stats-grid{grid-template-columns:repeat(2, 1fr); gap:1rem; padding:1rem;}
   #about .about-grid{grid-template-columns:1fr;gap:2rem;}
   .about-visual{max-width:260px;margin:0 auto;}
-  .exp-timeline::before{left:14px;}
+  .exp-timeline::before{left:19px;}
   .exp-item{gap:1rem;}
   .exp-card{padding:1.2rem;}
   .projects-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;}
+  .contact-card{padding:2rem 1.2rem;}
+  .contact-links{flex-direction:column; gap:0.8rem;}
+  .contact-link{width:100%; justify-content:center;}
+  .skills-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem;}
 }
 
 /* scroll reveal */
@@ -906,9 +967,9 @@ footer{
           <div class="exp-meta">
             <div>
               <div class="exp-role">Business Analyst Intern</div>
-              <div class="exp-org" style="color:var(--accent2)">AperioHub — Virtual</div>
+              <div class="exp-org" style="color:var(--accent2)">AperioHub · Internship</div>
             </div>
-            <div class="exp-period">May 2026</div>
+            <div class="exp-period">Apr 2026 - May 2026 · Remote</div>
           </div>
           <ul class="exp-list">
             <li>Collaborated in global cross-functional teams to solve complex business briefs and deliver strategic recommendations</li>
@@ -985,25 +1046,28 @@ footer{
     <div class="research-grid">
       <div class="research-card reveal">
         <div class="research-num">01</div>
-        <div class="research-title">Indian Knowledge System in MBA Education: Shaping Ethical Leaders for Social Justice</div>
+        <div class="research-title">Indian Knowledge System in MBA Education: Ethical Leaders for Social Justice</div>
         <div class="research-desc">Research on management education, ethical leadership, social responsibility, and sustainable organizational development.</div>
+        <div class="research-meta"><span class="research-badge rb-isbn">ISBN: 978-93-94503-29-8</span></div>
         <a href="https://drive.google.com/file/d/1u2jYzdn7toxe0BVCDc_6SONYueuXOOy3/view" target="_blank" class="research-link">Read Paper ↗</a>
       </div>
       <div class="research-card reveal">
         <div class="research-num">02</div>
-        <div class="research-title">Analysis of Technical Skill Development Among MBA Students</div>
+        <div class="research-title">Analysis of Technical Skill Development Among MBA Students at PMIST</div>
         <div class="research-desc">Survey-based study analyzing technical skill development patterns using Excel analytics and statistical methods.</div>
+        <div class="research-meta"><span class="research-badge rb-isbn">ISBN: 978-93-94503-79-3</span></div>
         <a href="https://drive.google.com/file/d/1bFThKw4jFrhSJ8nrPiBbl7onwsEiMo8b/view" target="_blank" class="research-link">Read Paper ↗</a>
       </div>
       <div class="research-card reveal">
         <div class="research-num">03</div>
-        <div class="research-title">Business Level Strategy of Reliance Jio to Sustain Market Leadership</div>
+        <div class="research-title">Business Level Strategy of Reliance Jio</div>
         <div class="research-desc">Strategic analysis using Porter Five Forces, Cost Leadership, and Differentiation frameworks to evaluate competitive advantage.</div>
+        <div class="research-meta"><span class="research-badge rb-isbn">ISBN: 978-93-344-4471-1</span></div>
         <a href="https://drive.google.com/file/d/13ZSafWi-q94z062CjCm5klkHBGmcorDF/view" target="_blank" class="research-link">Read Paper ↗</a>
       </div>
       <div class="research-card reveal">
         <div class="research-num">04</div>
-        <div class="research-title">Modern Workforce Dynamics and Organizational Redesign in Thanjavur IT Sector</div>
+        <div class="research-title">Modern Workforce Dynamics &amp; Organisational Redesign in Thanjavur IT Sector</div>
         <div class="research-desc">Research on workforce transformation, digital trends, employee engagement, and future workplace strategies.</div>
         <div class="research-meta">
           <span class="research-badge rb-doi">DOI: 10.5281/zenodo.20081077</span>
@@ -1014,7 +1078,7 @@ footer{
       </div>
       <div class="research-card reveal">
         <div class="research-num">05</div>
-        <div class="research-title">Challenges in Labor Markets and Labour Problems in India</div>
+        <div class="research-title">Challenges in Labour Markets &amp; Labour Problems in India</div>
         <div class="research-desc">Exploring unemployment, skill mismatch, AI impact on employment, and workforce participation challenges in India.</div>
         <div class="research-meta"><span class="research-badge rb-isbn">ISBN: 978-93-94503-96-0</span></div>
         <a href="https://drive.google.com/file/d/1iOwag9bASfEY1u6ZsLIihO9orz-d2xtD/view" target="_blank" class="research-link">Read Paper ↗</a>
@@ -1355,6 +1419,30 @@ document.querySelectorAll('.skill-card').forEach(card=>{
   },{threshold:0.3});
   cardObserver.observe(card);
 });
+<!-- BOTTOM MOBILE NAV DOCK -->
+<div class="mobile-nav-dock">
+  <a href="#about" class="dock-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+    <span>About</span>
+  </a>
+  <a href="#skills" class="dock-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+    <span>Skills</span>
+  </a>
+  <a href="#projects" class="dock-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+    <span>Projects</span>
+  </a>
+  <a href="#experience" class="dock-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    <span>Journey</span>
+  </a>
+  <a href="#contact" class="dock-item">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    <span>Contact</span>
+  </a>
+</div>
+
 </script>
 </body>
 </html>
